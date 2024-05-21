@@ -1,0 +1,48 @@
+<html>
+    <div>
+        <label>Primer Numero</label>
+        <input id="num1" />
+    </div>
+    <div>
+        <label>Segundo Numero</label>
+        <input id="num2" />
+    </div>
+    <button onclick="sumar();">Sumar</button>
+    <p id="res">
+     
+    </p>
+    <style>
+        #res.error {
+            color:red;
+        }
+        input.error {
+            border:1px solid red;
+            background:rgba(255,0,0,0.6);
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        jQuery('input').on('keydown',function() {		
+            jQuery(this).removeClass('error');
+            jQuery(this).removeAttr('title');
+        });
+     
+        function sumar() {
+            var num1 = jQuery('#num1').val();
+            num1 = parseInt(num1);
+            if (isNaN(num1)) {
+                jQuery('#num1').addClass('error');
+                jQuery('#num1').attr('title','El numero es invalido');
+            }
+            var num2 = jQuery('#num2').val();
+            num2 = parseInt(num2);
+            if (isNaN(num2)) {
+                jQuery('#num2').addClass('error');
+                jQuery('#num2').attr('title','El numero es invalido');
+            }
+     
+        }
+     
+     
+    </script>
+</html>

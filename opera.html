@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<script>
+    var edad = prompt("Dame edad");
+	edad = parseInt(edad);
+
+    isNaN(edad);
+    do {
+        edad = prompt("Dame edad");
+	    edad = parseInt(edad);
+        if (isNaN(edad)){
+            alert("Todo mal");
+            alert("Tratemos de nuevo");
+        }
+    } while (isNaN(edad));
+
+    /* "WHILE" Y "DO WHILE" NO SON LO MISMO
+    while (condicion) {
+        instrucciones;
+    }
+
+    do {
+        instrucciones;
+    } while (condicion);
+*/
+	if (edad<18) {
+		alert("No podes entrar");
+	} else if ((edad>25) && (edad<30)) {
+		alert("2x1");
+	} else if ((edad==40) || (edad==45)) {
+		alert("Voucher");
+	} else {
+		alert("adelante");
+	}
+
+</script>
+
+</head>
+<body>
+    
+</body>
+</html>

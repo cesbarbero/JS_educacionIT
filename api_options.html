@@ -1,0 +1,48 @@
+<article>
+	<h3>Eclipse</h3>
+	<p class="precio">
+		<span class="moneda">USD</span>
+		<span class="monto">60</span>
+	</p>
+<article>
+<article>
+	<h3>King of Tokio</h3>
+	<p class="precio">
+		<span class="moneda">USD</span>
+		<span class="monto">20</span>
+	</p>
+<article>
+<article>
+	<h3>Rebellion</h3>
+	<p class="precio">
+		<span class="moneda">USD</span>
+		<span class="monto">90</span>
+	</p>
+<article>
+<article>
+	<h3>GWT</h3>
+	<p class="precio">
+		<span class="moneda">USD</span>
+		<span class="monto">25</span>
+	</p>
+<article>
+<select id="tipo" onchange='actualizar()'>
+    <option></option>
+    <option>Dolar Oficial</option>
+    <option>Dolar Blue</option>
+</select>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+ function actualizarValores(valorDolar) {
+		var losprecios = jQuery('.precio');		
+		for (var i=0; i<losprecios.length; i++) {
+			var moneda = jQuery(losprecios[i]).children('.moneda');
+			var monto = jQuery(losprecios[i]).children('.monto');		
+			moneda.html('ARS');
+			var costo = monto.html();
+			var nuevocosto = parseFloat(costo)*valorDolar;
+			monto.html(nuevocosto.toFixed(2));
+		}
+	}
+
+</script>

@@ -1,0 +1,61 @@
+<article>
+	<h3>Eclipse</h3>
+	<p class="precio">
+		<span class="moneda">USD</span>
+		<span class="monto">60</span>
+	</p>
+<article>
+<article>
+	<h3>King of Tokio</h3>
+	<p class="precio">
+		<span class="moneda">USD</span>
+		<span class="monto">20</span>
+	</p>
+<article>
+<article>
+	<h3>Rebellion</h3>
+	<p class="precio">
+		<span class="moneda">USD</span>
+		<span class="monto">90</span>
+	</p>
+<article>
+<article>
+	<h3>GWT</h3>
+	<p class="precio">
+		<span class="moneda">USD</span>
+		<span class="monto">25</span>
+	</p>
+<article>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+ 
+ 
+	jQuery.get(
+		'https://www.dolarsi.com/api/api.php',
+		{
+			type:'valoresprincipales'
+		}, function(respuesta) {
+			console.log(respuesta);
+			if (respuesta[1].casa.nombre=="Dolar Blue") {
+                //leer el valor del Dolar Blue
+				valorstr = respuesta[1].casa.venta;
+                valorstr = valorstr.replace(',','.');
+                //cambio la coma por punto
+                valorDolar = parseFloat(valorstr);
+                //paso el string a Float
+ 
+				var losprecios = jQuery('.precio');		
+				for (var i=0; i<losprecios.length; i++) {
+					var moneda = jQuery(losprecios[i]).children('.moneda');
+					var monto = jQuery(losprecios[i]).children('.monto');		
+					moneda.html('ARS');
+					var costo = monto.html();
+					var nuevocosto = parseFloat(costo)*valorDolar;
+					monto.html(nuevocosto);
+				}
+			}
+		}, 
+		'json'
+	);
+ 
+</script>

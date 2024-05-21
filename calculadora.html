@@ -1,0 +1,14 @@
+<html>
+    <script>
+        function leerNum(etiqueta) {
+            do {
+                var leido = parseInt(prompt(etiqueta));
+            } while (isNaN(leido));
+        }   return leido;
+
+        var num1 = leerNum ('Dame un nro');
+        var num2 = leerNum ('Dame el otro nro');
+
+        alert(num1+num2);
+    </script>
+</html>

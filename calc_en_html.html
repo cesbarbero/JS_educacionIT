@@ -1,0 +1,41 @@
+<html>
+    <div>
+        <label>Primer Numero</label>
+        <input id="num1"/>
+    </div>
+    <div>
+        <label>Segundo Numero</label>
+        <input id="num2"/>
+    </div>
+    <button onclick='sumar();'>Sumar</button>
+    <p id="res"></p>
+    <style>
+        #res.error {
+            color:red;
+        }
+    </style>
+    <script>
+        function sumar() {
+            var elp = document.getElementById('res'); //Tomo lo del parrafo y lo guardo en una variable (vacio)
+            elp.innerHTML = '';
+
+            var input1 = document.getElementById('num1');
+            var num1 = input1.value;
+            num1 = parseInt(num1);
+            if (isNaN(num1)) {
+                elp.innerHTML += 'El numero 1 No es valido</br>';
+            }
+
+            var input2 = document.getElementById('num2');
+            var num2 = input2.value;
+            num2 = parseInt(num2);
+            if (isNaN(num2)) {
+                elp.innerHTML += 'El numero 2 No es valido</br>';
+            }
+
+            if (elp.innerHTML=='') {
+                elp.innerHTML = num1 + num2;
+            }
+        }
+    </script>
+</html>
